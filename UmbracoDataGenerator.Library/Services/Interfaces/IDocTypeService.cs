@@ -8,5 +8,8 @@ namespace UmbracoDataGenerator.Library.Services.Interfaces
 {
     public interface IDocTypeService
     {
+        bool DocTypeExists(string docType);
+        void CreateDocType(string docType);
+        void DeleteDocType(string docType);
     }
 }

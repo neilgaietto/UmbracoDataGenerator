@@ -21,7 +21,7 @@ namespace UmbracoDataGenerator.Web.App.Controllers.UmbracoApi
         [HttpPost] // POST umbraco/backoffice/Generator/DataGeneratorApi/CreateNodes
         public IHttpActionResult CreateNodes()
         {
-            //TODO: Do work.
+            _generatorService.Create("test", 1);
 
             return Ok();
         }

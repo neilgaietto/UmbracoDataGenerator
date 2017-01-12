@@ -17,5 +17,16 @@ namespace UmbracoDataGenerator.Library.Services
             _docTypeService = docTypeService;
             _nodeService = nodeService;
         }
+
+        public IEnumerable<int> Create(string docType, int count)
+        {
+            _docTypeService.CreateDocType(docType);
+
+            var targetNode = Constants.UmbracoConstants.RootNodeId;
+
+            var newNodes = _nodeService.CreateNodes(targetNode, docType, count);
+
+            return newNodes;
+        }
     }
 }
